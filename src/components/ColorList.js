@@ -8,16 +8,20 @@ function ColorList() {
     "darkslategray",
     "hotpink",
   ];
+  const users = [
+  { id: 1, firstName: "Mohamed", lastName: "Matassi" },
+  { id: 2, firstName: "Duane", lastName: "Johnson" },
+  ];
+
+  const colorElements = colors.map(color => <li key={color} style={{color: color}}>{color}</li>);
+  const userHeadings = users.map(user => <h2 key={user.id}>{user.firstName}{' '}{user.lastName} </h2>);
 
   return (
     <div>
       <h1>Top 5 CSS Colors</h1>
+      {userHeadings[0]}
       <ol>
-        <li style={{ color: colors[0] }}>{colors[0]}</li>
-        <li style={{ color: colors[1] }}>{colors[1]}</li>
-        <li style={{ color: colors[2] }}>{colors[2]}</li>
-        <li style={{ color: colors[3] }}>{colors[3]}</li>
-        <li style={{ color: colors[4] }}>{colors[4]}</li>
+        {colorElements} 
       </ol>
     </div>
   );
